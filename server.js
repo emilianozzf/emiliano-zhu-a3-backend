@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // MongoDB Configuration
-const mongoDBEndpoint = process.env.MONGODB_URI || 'mongodb+srv://emiliano-zhu:eg97r7WDhjflMNHk@cluster0.tt0sc.mongodb.net/myURL?retryWrites=true&w=majority';
+const mongoDBEndpoint = process.env.MONGODB_URI || 'mongodb://127.0.0.1/myURL';
 mongoose.connect(mongoDBEndpoint, { useNewUrlParser: true});
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'Error connecting to mongo db'));
